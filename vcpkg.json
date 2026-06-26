@@ -1,0 +1,15 @@
+{
+  "name": "swiftcast",
+  "version": "0.1.0",
+  "dependencies": [
+    {
+      "name": "qt6-base",
+      "version>=": "6.5.0"
+    },
+    {
+      "name": "qt6-networkauth",
+      "version>=": "6.5.0"
+    },
+    "nlohmann-json"
+  ]
+}
