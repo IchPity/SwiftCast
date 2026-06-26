@@ -20,6 +20,7 @@ public:
     ~Application();
 
     bool initialize();
+    void showLauncher();
 
 private slots:
     void onLaunchHotkey();

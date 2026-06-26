@@ -15,6 +15,7 @@
 #include <QFocusEvent>
 #include <QGraphicsDropShadowEffect>
 #include <QPropertyAnimation>
+#include <QCloseEvent>
 #include <QFile>
 #include <QStyle>
 #include <QStyleOption>
@@ -294,6 +295,12 @@ void LauncherWindow::paintEvent(QPaintEvent*)
 void LauncherWindow::focusOutEvent(QFocusEvent* e)
 {
     QWidget::focusOutEvent(e);
+}
+
+void LauncherWindow::closeEvent(QCloseEvent* e)
+{
+    e->ignore();
+    hide();
 }
 
 bool LauncherWindow::eventFilter(QObject* obj, QEvent* e)

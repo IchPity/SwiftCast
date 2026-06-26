@@ -78,6 +78,11 @@ bool Application::initialize()
     return true;
 }
 
+void Application::showLauncher()
+{
+    m_launcherWindow->popup();
+}
+
 void Application::onLaunchHotkey()
 {
     if (m_launcherWindow->isVisible()) {

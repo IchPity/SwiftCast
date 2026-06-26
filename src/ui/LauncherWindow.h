@@ -57,6 +57,7 @@ signals:
 protected:
     void keyPressEvent(QKeyEvent* e) override;
     void focusOutEvent(QFocusEvent* e) override;
+    void closeEvent(QCloseEvent* e) override;
     bool eventFilter(QObject* obj, QEvent* e) override;
     void paintEvent(QPaintEvent* e) override;
     void showEvent(QShowEvent* e) override;

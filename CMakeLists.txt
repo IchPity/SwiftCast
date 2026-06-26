@@ -16,8 +16,7 @@ find_package(Qt6 REQUIRED COMPONENTS Core Widgets Network Gui)
 
 include_directories(${PROJECT_SOURCE_DIR}/src)
 
-set(SOURCES
-    src/main.cpp
+set(APP_SOURCES
     src/core/Application.cpp
     src/core/HotkeyManager.cpp
     src/core/Settings.cpp
@@ -28,6 +27,11 @@ set(SOURCES
     src/extensions/ExtensionLoader.cpp
     src/extensions/ExtensionStore.cpp
     src/utils/FileSystem.cpp
+)
+
+set(SOURCES
+    src/main.cpp
+    ${APP_SOURCES}
 )
 
 set(HEADERS
@@ -74,6 +78,20 @@ enable_testing()
 add_executable(test_settings tests/test_settings.cpp)
 target_link_libraries(test_settings PRIVATE Qt6::Core)
 add_test(NAME SettingsPersistence COMMAND test_settings)
+
+# Manual UI launcher for development/testing — not a CTest test (requires user interaction)
+add_executable(test_launch WIN32
+    tests/test_launch.cpp
+    ${APP_SOURCES}
+    ${HEADERS}
+    ${RESOURCES}
+)
+target_link_libraries(test_launch PRIVATE
+    Qt6::Core Qt6::Widgets Qt6::Network Qt6::Gui
+)
+if(WIN32)
+    target_link_libraries(test_launch PRIVATE user32 dwmapi shell32 shlwapi)
+endif()
 
 set_target_properties(swiftcast PROPERTIES
     OUTPUT_NAME "SwiftCast"
