@@ -15,10 +15,10 @@ Settings::Settings(QObject* parent)
 {
     s_instance = this;
 
-    // Defaults: Ctrl+Enter to launch
-    m_launchHotkey.modifiers = Qt::ControlModifier;
-    m_launchHotkey.key       = Qt::Key_Return;
-    m_launchHotkey.label     = "Ctrl+Enter";
+    // Defaults: Ctrl+Shift+Space to launch
+    m_launchHotkey.modifiers = Qt::ControlModifier | Qt::ShiftModifier;
+    m_launchHotkey.key       = Qt::Key_Space;
+    m_launchHotkey.label     = "Ctrl+Shift+Space";
 
     // Defaults: F12 to open settings/hotkey editor
     m_settingsHotkey.modifiers = 0;
