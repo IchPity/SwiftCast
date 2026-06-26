@@ -2,13 +2,13 @@
 
 **A fast, extensible productivity launcher for Windows — inspired by RayCast.**
 
-> Press `Ctrl+Enter` anywhere. Find anything. Launch instantly.
+> Press `Ctrl+Shift+Space` anywhere. Find anything. Launch instantly.
 
 ---
 
 ## Features
 
-- **Global Hotkey** — Open SwiftCast from anywhere with `Ctrl+Enter`
+- **Global Hotkey** — Open SwiftCast from anywhere with `Ctrl+Shift+Space`
 - **Instant Search** — Search apps, commands, and extensions in real time
 - **Extension System** — Download and install extensions from the built-in store
 - **Keyboard-first** — Navigate everything with arrow keys and Enter
@@ -22,13 +22,13 @@
 1. Download `SwiftCast-Setup.exe` from [Releases](https://github.com/IchPity/SwiftCast/releases)
 2. Run the installer
 3. SwiftCast starts automatically
-4. Press **`Ctrl+Enter`** to open the launcher
+4. Press **`Ctrl+Shift+Space`** to open the launcher
 
 ## Usage
 
 | Key | Action |
 |-----|--------|
-| `Ctrl+Enter` | Open / close SwiftCast |
+| `Ctrl+Shift+Space` | Open / close SwiftCast |
 | `↑` / `↓` | Navigate results |
 | `Enter` | Execute selected item |
 | `Esc` | Close launcher |

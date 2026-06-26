@@ -168,8 +168,8 @@ void HotkeyEditor::buildUi()
     auto* resetBtn = new QPushButton("Reset to Defaults", this);
     resetBtn->setObjectName("ResetButton");
     connect(resetBtn, &QPushButton::clicked, this, [this]{
-        HotkeyConfig lh; lh.modifiers = Qt::ControlModifier;
-                         lh.key = Qt::Key_Return; lh.label = "Ctrl+Enter";
+        HotkeyConfig lh; lh.modifiers = Qt::ControlModifier | Qt::ShiftModifier;
+                         lh.key = Qt::Key_Space; lh.label = "Ctrl+Shift+Space";
         HotkeyConfig sh; sh.modifiers = 0;
                          sh.key = Qt::Key_F12;    sh.label = "F12";
         m_launchCapture->setConfig(lh);

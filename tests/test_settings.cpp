@@ -20,9 +20,9 @@ int main(int argc, char* argv[])
 
     // Write
     QJsonObject hotkey;
-    hotkey["modifiers"] = 4;   // Qt::ControlModifier
-    hotkey["key"]       = 16777220; // Qt::Key_Return
-    hotkey["label"]     = "Ctrl+Enter";
+    hotkey["modifiers"] = 0x06000000; // Qt::ControlModifier | Qt::ShiftModifier
+    hotkey["key"]       = 0x20;        // Qt::Key_Space
+    hotkey["label"]     = "Ctrl+Shift+Space";
 
     QJsonObject root;
     root["launchHotkey"]          = hotkey;
@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
 
     QJsonObject read = doc.object();
     assert(read["launchOnStartup"].toBool() == true);
-    assert(read["launchHotkey"].toObject()["label"].toString() == "Ctrl+Enter");
+    assert(read["launchHotkey"].toObject()["label"].toString() == "Ctrl+Shift+Space");
 
     std::cout << "test_settings: PASSED\n";
     return 0;

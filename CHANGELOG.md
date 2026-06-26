@@ -17,7 +17,7 @@ Versionierung folgt dem Schema `0.MINOR.PATCH` (siehe [VERSIONING.md](VERSIONING
 ### Hinzugefügt
 
 #### Kern
-- Globaler Hotkey `Ctrl+Enter` zum Öffnen/Schließen des Launchers
+- Globaler Hotkey `Ctrl+Shift+Space` zum Öffnen/Schließen des Launchers
 - `HotkeyManager` — Registrierung und Verwaltung systemweiter Tastenkürzel
 - `Settings` — Persistente Konfiguration via `QSettings` (INI-Format)
 - `Application` — Zentraler App-Controller mit System-Tray-Integration

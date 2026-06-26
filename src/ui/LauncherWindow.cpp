@@ -199,7 +199,7 @@ void LauncherWindow::buildUi()
     root->addWidget(m_resultList);
 
     // ── Status bar ──
-    m_statusBar = new QLabel("  Ctrl+Enter to open · F12 for settings", this);
+    m_statusBar = new QLabel("  Ctrl+Shift+Space to open · F12 for settings", this);
     m_statusBar->setObjectName("StatusBar");
     m_statusBar->setFixedHeight(26);
     m_statusBar->hide();
