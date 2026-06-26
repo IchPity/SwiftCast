@@ -1,0 +1,209 @@
+/* ============================
+   SwiftCast Dark Theme
+   ============================ */
+
+/* ---- Launcher Window ---- */
+#LauncherWindow {
+    background-color: #12101A;
+    border: 1px solid #2D2640;
+    border-radius: 14px;
+}
+
+/* ---- Search Bar ---- */
+#SearchInput {
+    background-color: transparent;
+    color: #F0EAFF;
+    border: none;
+    border-bottom: 1px solid #2D2640;
+    border-radius: 0px;
+    padding: 14px 18px 14px 48px;
+    font-size: 17px;
+    font-family: "Segoe UI Variable", "Segoe UI", sans-serif;
+    font-weight: 400;
+    selection-background-color: #6D28D9;
+    selection-color: #FFFFFF;
+}
+
+#SearchInput:focus {
+    outline: none;
+    border-bottom: 1px solid #7C3AED;
+}
+
+/* ---- Results List ---- */
+#ResultsList {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 6px 8px;
+    font-family: "Segoe UI Variable", "Segoe UI", sans-serif;
+    font-size: 14px;
+    color: #C4B8E0;
+}
+
+#ResultsList::item {
+    background-color: transparent;
+    padding: 9px 12px;
+    border-radius: 8px;
+    margin: 1px 0px;
+    min-height: 38px;
+}
+
+#ResultsList::item:hover {
+    background-color: #1E1B2E;
+}
+
+#ResultsList::item:selected {
+    background-color: #3B1E8A;
+    color: #F0EAFF;
+}
+
+/* ---- Category Label ---- */
+#CategoryLabel {
+    color: #6D5FA0;
+    font-size: 11px;
+    font-family: "Segoe UI Variable", "Segoe UI", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 10px 20px 4px 20px;
+}
+
+/* ---- Status Bar ---- */
+#StatusBar {
+    background-color: #0D0B14;
+    border-top: 1px solid #1E1B2E;
+    border-radius: 0 0 14px 14px;
+    padding: 5px 14px;
+    color: #4A3F6B;
+    font-size: 11px;
+    font-family: "Segoe UI Variable", "Segoe UI", sans-serif;
+}
+
+/* ---- Hotkey Editor ---- */
+#HotkeyEditor {
+    background-color: #12101A;
+    color: #C4B8E0;
+    border: 1px solid #2D2640;
+}
+
+#HotkeyEditor QLabel {
+    color: #C4B8E0;
+    font-family: "Segoe UI Variable", "Segoe UI", sans-serif;
+    font-size: 13px;
+}
+
+#HotkeyEditor QLabel#TitleLabel {
+    color: #F0EAFF;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#HotkeyEditor QPushButton {
+    background-color: #1E1B2E;
+    color: #C4B8E0;
+    border: 1px solid #2D2640;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-family: "Segoe UI Variable", "Segoe UI", sans-serif;
+    font-size: 13px;
+    min-width: 80px;
+}
+
+#HotkeyEditor QPushButton:hover {
+    background-color: #2D2640;
+    border-color: #7C3AED;
+    color: #F0EAFF;
+}
+
+#HotkeyEditor QPushButton#SaveButton {
+    background-color: #6D28D9;
+    border-color: #7C3AED;
+    color: #FFFFFF;
+}
+
+#HotkeyEditor QPushButton#SaveButton:hover {
+    background-color: #7C3AED;
+}
+
+#KeyBadge {
+    background-color: #1E1B2E;
+    color: #A78BFA;
+    border: 1px solid #3D2F70;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-family: "Cascadia Code", "Consolas", monospace;
+    font-size: 13px;
+}
+
+/* ---- Settings Dialog ---- */
+#SettingsDialog {
+    background-color: #12101A;
+    color: #C4B8E0;
+}
+
+#SettingsDialog QLabel {
+    color: #C4B8E0;
+    font-family: "Segoe UI Variable", "Segoe UI", sans-serif;
+}
+
+#SettingsDialog QPushButton {
+    background-color: #1E1B2E;
+    color: #C4B8E0;
+    border: 1px solid #2D2640;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-family: "Segoe UI Variable", "Segoe UI", sans-serif;
+    font-size: 13px;
+}
+
+#SettingsDialog QPushButton:hover {
+    background-color: #2D2640;
+    color: #F0EAFF;
+}
+
+#SettingsDialog QCheckBox {
+    color: #C4B8E0;
+    font-family: "Segoe UI Variable", "Segoe UI", sans-serif;
+    font-size: 13px;
+    spacing: 8px;
+}
+
+#SettingsDialog QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    border: 1px solid #3D2F70;
+    background-color: #1E1B2E;
+}
+
+#SettingsDialog QCheckBox::indicator:checked {
+    background-color: #6D28D9;
+    border-color: #7C3AED;
+}
+
+/* ---- Scrollbar ---- */
+QScrollBar:vertical {
+    background: transparent;
+    width: 6px;
+    margin: 0px;
+}
+
+QScrollBar::handle:vertical {
+    background: #2D2640;
+    border-radius: 3px;
+    min-height: 20px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: #4A3F6B;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0px;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: transparent;
+}
