@@ -70,6 +70,29 @@ if(WIN32)
     target_link_libraries(swiftcast PRIVATE user32 dwmapi shell32 shlwapi)
 endif()
 
+# --- Windows: auto-deploy Qt runtime DLLs next to the executable ---
+# Without this the .exe fails to start with "Qt6Network.dll not found" etc.,
+# because the Qt runtime DLLs and plugins are not on the PATH at runtime.
+if(WIN32)
+    # windeployqt ships in the same bin/ dir as the Qt tools.
+    get_target_property(_qmake_exe Qt6::qmake IMPORTED_LOCATION)
+    get_filename_component(_qt_bin_dir "${_qmake_exe}" DIRECTORY)
+    find_program(WINDEPLOYQT_EXECUTABLE windeployqt HINTS "${_qt_bin_dir}")
+
+    if(WINDEPLOYQT_EXECUTABLE)
+        add_custom_command(TARGET swiftcast POST_BUILD
+            COMMAND "${WINDEPLOYQT_EXECUTABLE}"
+                    --no-translations
+                    --no-compiler-runtime
+                    "$<IF:$<CONFIG:Debug>,--debug,--release>"
+                    "$<TARGET_FILE:swiftcast>"
+            COMMENT "Deploying Qt runtime DLLs with windeployqt"
+            VERBATIM)
+    else()
+        message(WARNING "windeployqt not found - Qt DLLs will NOT be deployed automatically.")
+    endif()
+endif()
+
 install(TARGETS swiftcast RUNTIME DESTINATION bin)
 install(DIRECTORY resources/styles DESTINATION bin/resources)
 
