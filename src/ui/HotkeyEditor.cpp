@@ -7,6 +7,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QFrame>
+#include <QFile>
 
 namespace SwiftCast {
 

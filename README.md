@@ -73,6 +73,10 @@ SwiftCast/
 └── docs/            Build and developer documentation
 ```
 
+## Changelog
+
+Eine vollständige Liste aller Änderungen pro Version: [CHANGELOG.md](CHANGELOG.md)
+
 ## License
 
 To be defined.
