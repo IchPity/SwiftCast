@@ -71,6 +71,10 @@ install(DIRECTORY resources/styles DESTINATION bin/resources)
 
 enable_testing()
 
+add_executable(test_settings tests/test_settings.cpp)
+target_link_libraries(test_settings PRIVATE Qt6::Core)
+add_test(NAME SettingsPersistence COMMAND test_settings)
+
 set_target_properties(swiftcast PROPERTIES
     OUTPUT_NAME "SwiftCast"
     WIN32_EXECUTABLE TRUE

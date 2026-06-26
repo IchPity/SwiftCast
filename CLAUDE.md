@@ -23,6 +23,16 @@ SwiftCast is a productivity tool providing quick access to applications, scripts
 - **Pushing**: Only on your explicit command (I will ask for permission)
 - **Feature Publishing**: Features are only published/merged when you approve
 
+### CI / Testing Pipeline
+
+- **Tests run only on push to `main`** — never on local-only commits
+- The CI pipeline is defined in `.github/workflows/ci.yml`
+- It runs automatically on GitHub whenever a push reaches `main`
+- You can also trigger it manually via GitHub → Actions → "CI" → "Run workflow"
+- Pipeline steps: Install Qt6 → CMake configure → Build (Release) → CTest
+- New tests go in `tests/` and must be registered with `add_test()` in CMakeLists.txt
+- **Rule**: A locally committed but unpushed change is never in CI — only what is on GitHub counts
+
 ### Project Structure
 
 Use a logical folder hierarchy:

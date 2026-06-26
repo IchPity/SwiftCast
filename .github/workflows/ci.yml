@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    name: Build & Test (Windows)
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v3
+        with:
+          version: '6.5.3'
+          host: 'windows'
+          target: 'desktop'
+          arch: 'win64_msvc2019_64'
+          modules: 'qtnetworkauth'
+          cache: true
+
+      - name: Configure CMake
+        run: |
+          cmake -B build `
+            -DCMAKE_BUILD_TYPE=Release `
+            -DCMAKE_PREFIX_PATH="${{ env.Qt6_DIR }}"
+
+      - name: Build
+        run: cmake --build build --config Release --parallel
+
+      - name: Run Tests
+        run: ctest --test-dir build --build-config Release --output-on-failure
